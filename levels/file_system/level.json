@@ -1,0 +1,18 @@
+{
+  "title": "All File Systems Go",
+  "description": "What can you do with the local filesystem?",
+  "questTitle": "File Structures",
+  "questDescription": "Example level for messing with files. See what's possible!",
+  "mission_icon": "mission_icon.png",
+  "is_mission": true,
+  "priority": 10,
+  "backgroundMusic": "hackertheme_104771b",
+  "backgroundEffect": {
+    "key": "vr",
+    "options": {}
+  },
+  "flavorTextOverrides": {
+    "bookshelf": "There's nothing like a good book."
+  },
+  "objectives": ["example_objective", "example_objective2"]
+}
