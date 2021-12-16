@@ -42,7 +42,9 @@ function checkDirectoryState() {
   if (firstMissing !== undefined) {
     // Hacky...check and see if the file has an extension
     const isFile = path.basename(firstMissing.filePath).includes(".");
-    message = `Please add the ${isFile ? "file" : "directory"} ${firstMissing.filePath}`;
+    message = `Please add the ${isFile ? "file" : "directory"} ${
+      firstMissing.filePath
+    }`;
   }
   return {
     valid: firstMissing === undefined,
@@ -62,21 +64,24 @@ module.exports = function (event, world) {
     } else {
       world.showNotification("You did it!");
       world.hideEntities("fire");
-      watcher.unwatch(getStartingDirectory());
     }
+    return currentDirectoryState.valid;
   }
-  
+
   if (event.name === "mapDidLoad") {
-    world.showNotification(`Working directory is ${getStartingDirectory()}`)
+    world.showNotification(`Working directory is ${getStartingDirectory()}`);
     const watcher = chokidar.watch(getStartingDirectory(), {
       ignoreInitial: true,
     });
-    watcher.on('all', (fileEvent, path) => {
+    watcher.on("all", (fileEvent, path) => {
       console.log(fileEvent, path);
-      updateDirectoryFeedback();
+      const valid = updateDirectoryFeedback();
+      if (valid) {
+        watcher.unwatch(getStartingDirectory());
+      }
     });
+    updateDirectoryFeedback();
   }
 
-  updateDirectoryFeedback();
   world.setState(WORLD_STATE_KEY, worldState);
 };
