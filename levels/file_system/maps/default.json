@@ -119,8 +119,38 @@
                  "type":"",
                  "visible":true,
                  "width":32,
-                 "x":260,
-                 "y":274
+                 "x":280.298781889221,
+                 "y":285.473224546081
+                }, 
+                {
+                 "gid":10014,
+                 "height":26,
+                 "id":132,
+                 "name":"fire",
+                 "properties":[
+                        {
+                         "name":"key",
+                         "type":"string",
+                         "value":"fire"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":24,
+                 "x":336.609515054011,
+                 "y":386.079292116755
+                }, 
+                {
+                 "gid":10014,
+                 "height":26,
+                 "id":133,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":false,
+                 "width":24,
+                 "x":-69.3661227304068,
+                 "y":232.756377844174
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -168,7 +198,7 @@
          "y":0
         }],
  "nextlayerid":44,
- "nextobjectid":128,
+ "nextobjectid":136,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.7.2",
